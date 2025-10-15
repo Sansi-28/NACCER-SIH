@@ -12,15 +12,16 @@ import {
   Settings,
   Atom,
 } from "lucide-react";
-
+// ...
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
-  { href: "/proposals", icon: FileText, label: "Proposals" },
-  { href: "/evaluation", icon: ClipboardCheck, label: "Evaluation" },
-  { href: "/analytics", icon: LineChart, label: "Analytics" },
-  { href: "/compliance", icon: ShieldCheck, label: "Compliance" },
-  { href: "/reports", icon: Download, label: "Reports" },
+  { href: "/dashboard/proposals", icon: FileText, label: "Proposals" },
+  { href: "/dashboard/evaluation", icon: ClipboardCheck, label: "Evaluation" },
+  { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" }, // <-- FIX HERE
+  { href: "/dashboard/compliance", icon: ShieldCheck, label: "Compliance" },
+  { href: "/dashboard/reports", icon: Download, label: "Reports" },
 ];
+// ...
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -50,7 +51,7 @@ export function Sidebar() {
       </ul>
       <div className="mt-auto">
         <Link
-          href="/settings"
+          href="/dashboard/settings"
           className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
             pathname === "/settings"
               ? "bg-primary/20 text-primary font-semibold"
