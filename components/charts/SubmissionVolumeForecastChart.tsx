@@ -1,3 +1,5 @@
+// components/charts/SubmissionVolumeForecastChart.tsx
+
 "use client";
 
 import { ResponsiveContainer, LineChart, XAxis, YAxis, Tooltip, Legend, Line, CartesianGrid, Area } from 'recharts';
@@ -19,7 +21,10 @@ export function SubmissionVolumeForecastChart() {
         <YAxis stroke="#8B949E" />
         <Tooltip />
         <Legend />
-        <Area type="monotone" dataKey="range" stroke={false} fill="rgba(56, 189, 248, 0.2)" name="Confidence Interval" />
+        
+        {/* THE FIX IS ON THIS LINE: Changed stroke={false} to strokeWidth={0} */}
+        <Area type="monotone" dataKey="range" fill="rgba(56, 189, 248, 0.2)" name="Confidence Interval" strokeWidth={0} />
+        
         <Line type="monotone" dataKey="actual" stroke="#4ADE80" strokeWidth={2} name="Historical Submissions" />
         <Line type="monotone" dataKey="forecast" stroke="#38BDF8" strokeWidth={2} strokeDasharray="5 5" name="Forecast" />
       </LineChart>
