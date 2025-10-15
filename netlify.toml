@@ -1,0 +1,15 @@
+# netlify.toml
+
+# This [build] block tells Netlify the essential commands and directories.
+[build]
+  # The command to run to build your Next.js project.
+  command = "next build"
+  
+  # The directory that contains the finished build files. 
+  # For Next.js, this is always the ".next" folder.
+  publish = ".next"
+
+# The [plugins] block ensures Netlify uses its specialized Next.js runtime,
+# which is crucial for handling server-side rendering, API routes, etc.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
