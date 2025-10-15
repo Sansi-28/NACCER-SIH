@@ -29,16 +29,15 @@ import { Proposal } from "@/types"
 
 interface DataTableProps {
   onRowClick: (proposalId: string) => void;
+  data: Proposal[];
 }
 
-export function ProposalDataTable({ onRowClick }: DataTableProps) {
+export function ProposalDataTable({ onRowClick, data }: DataTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
   
-  const data = React.useMemo(() => appData.proposals, [])
-
   const table = useReactTable({
     data,
     columns,

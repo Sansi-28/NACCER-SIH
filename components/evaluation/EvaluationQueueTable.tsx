@@ -5,10 +5,10 @@ import { useReactTable, getCoreRowModel, getPaginationRowModel, flexRender } fro
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { columns } from "./columns"
-import { Proposal } from "@/types"
+import { EvaluationQueueItem } from "@/types"
 
 interface EvaluationQueueTableProps {
-  data: Proposal[];
+  data: EvaluationQueueItem[];
 }
 
 export function EvaluationQueueTable({ data }: EvaluationQueueTableProps) {
