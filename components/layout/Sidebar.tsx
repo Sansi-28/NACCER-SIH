@@ -1,5 +1,4 @@
 "use client";
-// components/layout/Sidebar.tsx
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -12,16 +11,15 @@ import {
   Settings,
   Atom,
 } from "lucide-react";
-// ...
+
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Dashboard" },
   { href: "/dashboard/proposals", icon: FileText, label: "Proposals" },
   { href: "/dashboard/evaluation", icon: ClipboardCheck, label: "Evaluation" },
-  { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" }, // <-- FIX HERE
+  { href: "/dashboard/analytics", icon: LineChart, label: "Analytics" },
   { href: "/dashboard/compliance", icon: ShieldCheck, label: "Compliance" },
   { href: "/dashboard/reports", icon: Download, label: "Reports" },
 ];
-// ...
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -53,7 +51,7 @@ export function Sidebar() {
         <Link
           href="/dashboard/settings"
           className={`flex items-center gap-3 px-4 py-3 rounded-md transition-colors ${
-            pathname === "/settings"
+            pathname === "/dashboard/settings" // <-- FIX HERE
               ? "bg-primary/20 text-primary font-semibold"
               : "hover:bg-white/5 text-text-secondary"
           }`}

@@ -1,10 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart, AlertTriangle } from "lucide-react";
-// We can create these chart components next
-// import { ViolationByCategoryChart } from "@/components/charts/ViolationByCategoryChart";
-// import { TopViolatedRulesChart } from "@/components/charts/TopViolatedRulesChart";
+import { ViolationByCategoryChart } from "@/components/charts/ViolationByCategoryChart";
+import { TopViolatedRulesChart } from "@/components/charts/TopViolatedRulesChart";
 import { RecentViolationsTable } from "@/components/compliance/RecentViolationsTable";
-
+ 
 export function ComplianceMonitoringTab() {
   return (
     <div className="space-y-6">
@@ -15,8 +14,7 @@ export function ComplianceMonitoringTab() {
           </CardHeader>
           <CardContent>
             <div className="h-64 flex items-center justify-center text-text-secondary">
-              {/* <ViolationByCategoryChart /> Placeholder */}
-              Bar chart placeholder
+              <ViolationByCategoryChart />
             </div>
           </CardContent>
         </Card>
@@ -26,8 +24,7 @@ export function ComplianceMonitoringTab() {
           </CardHeader>
           <CardContent>
             <div className="h-64 flex items-center justify-center text-text-secondary">
-              {/* <TopViolatedRulesChart /> Placeholder */}
-              Horizontal bar chart placeholder
+              <TopViolatedRulesChart />
             </div>
           </CardContent>
         </Card>

@@ -13,11 +13,13 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 interface DataTableRowActionsProps<TData> {
-  row: Row<TData>
+  row: Row<TData>;
+  onViewDetails: () => void;
 }
 
 export function DataTableRowActions<TData>({
   row,
+  onViewDetails
 }: DataTableRowActionsProps<TData>) {
   return (
     <DropdownMenu>
@@ -31,7 +33,9 @@ export function DataTableRowActions<TData>({
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[160px]">
-        <DropdownMenuItem>View Details</DropdownMenuItem>
+        <DropdownMenuItem onClick={onViewDetails}>
+          View Details
+        </DropdownMenuItem>
         <DropdownMenuItem>Assign Reviewer</DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>Approve</DropdownMenuItem>

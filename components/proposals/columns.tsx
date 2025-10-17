@@ -61,7 +61,6 @@ export const columns: ColumnDef<Proposal>[] = [
         "Approved": "success",
         "Under Review": "info",
         "Rejected": "destructive",
-        "Pending Review": "warning",
         "Pending": "warning",
       }[status] || "default"
 
@@ -92,14 +91,13 @@ export const columns: ColumnDef<Proposal>[] = [
     cell: ({ row }) => <Badge variant="secondary">{row.getValue("research_area")}</Badge>,
   },
 
-  // 6. Submission Date (with relative time)
+  // 6. Submission Date
   {
     accessorKey: "submission_date",
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Submitted" />
     ),
     cell: ({ row }) => {
-      // In a real app, use date-fns formatDistanceToNow
       return <span>{new Date(row.getValue("submission_date")).toLocaleDateString()}</span>
     }
   },
@@ -107,6 +105,9 @@ export const columns: ColumnDef<Proposal>[] = [
   // 7. Row Actions
   {
     id: "actions",
-    cell: ({ row }) => <DataTableRowActions row={row} />,
+    cell: ({ row, table }) => {
+      const { handleRowClick } = table.options.meta as any;
+      return <DataTableRowActions row={row} onViewDetails={() => handleRowClick(row.original.id)} />;
+    },
   },
 ]

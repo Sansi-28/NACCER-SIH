@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { DataTableToolbar } from "./DataTableToolbar"
-import { appData } from "@/data/mockData"
 import { columns } from "./columns"
 import { Proposal } from "@/types"
 
@@ -41,6 +40,9 @@ export function ProposalDataTable({ onRowClick, data }: DataTableProps) {
   const table = useReactTable({
     data,
     columns,
+    meta: {
+      handleRowClick: onRowClick,
+    },
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),

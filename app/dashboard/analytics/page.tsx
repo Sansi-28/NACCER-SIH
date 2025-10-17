@@ -1,5 +1,4 @@
-"use client"; // Add this directive because Tabs are interactive
-
+"use client";
 import { Header } from "@/components/layout/Header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AnalyticsFilterBar } from "@/components/analytics/AnalyticsFilterBar";
@@ -28,19 +27,19 @@ export default function AnalyticsPage() {
           <TabsTrigger value="forecasting">Forecasting</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="portfolio">
+        <TabsContent value="portfolio" className="mt-4">
           <PortfolioAnalysisTab />
         </TabsContent>
-        <TabsContent value="performance">
+        <TabsContent value="performance" className="mt-4">
           <PerformanceMetricsTab />
         </TabsContent>
-        <TabsContent value="financial">
+        <TabsContent value="financial" className="mt-4">
           <FinancialInsightsTab />
         </TabsContent>
-        <TabsContent value="compliance">
+        <TabsContent value="compliance" className="mt-4">
           <ComplianceRiskTab />
         </TabsContent>
-        <TabsContent value="forecasting">
+        <TabsContent value="forecasting" className="mt-4">
           <ForecastingTab />
         </TabsContent>
       </Tabs>
