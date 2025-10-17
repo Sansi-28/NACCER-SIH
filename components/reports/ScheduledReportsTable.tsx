@@ -1,6 +1,6 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { DataTableRowActions } from "@/components/proposals/DataTableRowActions"; // Reusing this for the dropdown
+import { ScheduledReportRowActions } from "./ScheduledReportRowActions"; // <-- IMPORT THE NEW COMPONENT
 
 // Mock data for scheduled reports
 const scheduledReports = [
@@ -38,7 +38,8 @@ export function ScheduledReportsTable() {
                   <Badge variant={report.status === 'Active' ? 'success' : 'secondary'}>{report.status}</Badge>
                 </TableCell>
                 <TableCell>
-                  <DataTableRowActions row={{ original: report } as any} />
+                  {/* USE THE NEW, CORRECT COMPONENT HERE */}
+                  <ScheduledReportRowActions row={{ original: report } as any} />
                 </TableCell>
               </TableRow>
             ))}
